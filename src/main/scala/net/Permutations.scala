@@ -1,7 +1,5 @@
 package net
 
-import scala.annotation.tailrec
-
 object Permutations {
 
   def permutations[A](str: List[A]): List[List[A]] =
