@@ -1,16 +1,12 @@
 package net
 
+import scala.annotation.tailrec
+
 object Permutations {
 
   def permutations[A](str: List[A]): List[List[A]] =
     str match {
       case Nil => List(Nil)
-      case l @ _ :: _ => permutationsHelper(l)
-    }
-
-  private def permutationsHelper[A](str: List[A]): List[List[A]] =
-    str match {
-      case Nil => Nil
       case a :: b :: Nil => List(List(a, b), List(b, a))
       case list @ _ :: _ =>
         val shifteds: List[List[A]] =
